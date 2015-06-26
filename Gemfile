@@ -18,6 +18,8 @@ gem 'mini_magick'
 gem 'faker'
 gem 'aws-sdk'
 gem 'fog'
+gem 'payola-payments'
+gem 'stripe'
 
 group :development, :test do
   gem 'byebug'
