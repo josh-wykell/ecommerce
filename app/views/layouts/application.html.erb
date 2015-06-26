@@ -38,6 +38,7 @@
       </div>
     </div>
   </nav>
+
   <div class="container">
     <% flash.each do |name, msg| %>
       <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
@@ -45,8 +46,22 @@
         <%= msg %>
       <% end %>
     <% end %>
+         
+              <% unless current_user %>
+              <form action="<%= user_session_path %>" method='POST'>
+                <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+                    <button type="submit" name="commit" class="button alert">Log In</button>
+              </form>
+              <% else %>
+              <form action="<%= destroy_user_session_path %>" method='POST'>
+                <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+                <input name="_method" type="hidden" value="delete" />
+                    <button type="submit" class="button alert">LogOut</button>
+              </form>
+              <% end %>
 
     <%= yield %>
+   
   </div>
 </body>
 </html>
