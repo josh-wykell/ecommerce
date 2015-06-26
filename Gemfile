@@ -13,6 +13,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-generators', '~> 3.3.4'
 gem 'puma'
 gem 'devise'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'faker'
+gem 'aws-sdk'
+gem 'fog'
 
 group :development, :test do
   gem 'byebug'
