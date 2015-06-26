@@ -16,7 +16,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'faker'
 gem 'aws-sdk'
-gem 'fog'
+gem 'carrierwave-aws'
 gem 'payola-payments'
 gem 'stripe'
 

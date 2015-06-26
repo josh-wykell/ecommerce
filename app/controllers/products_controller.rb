@@ -17,32 +17,25 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.create(product_params)
-
-    respond_to do |format|
       if @product.save
         redirect_to @product, notice: 'Product was successfully created.' 
       else
         render :new 
       end
-    end
   end
 
   # PATCH/PUT /products/1
   def update
-    respond_to do |format|
       if @product.update(product_params)
         redirect_to @product, notice: 'Product was successfully updated.' 
       else
         render :edit 
       end
-    end
   end
 
   def destroy
     @product.destroy
-    respond_to do |format|
       redirect_to products_url, notice: 'Product was successfully destroyed.' 
-    end
   end
 
   private
