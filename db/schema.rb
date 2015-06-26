@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626134012) do
+ActiveRecord::Schema.define(version: 20150626183234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,12 +115,12 @@ ActiveRecord::Schema.define(version: 20150626134012) do
   add_index "payola_subscriptions", ["guid"], name: "index_payola_subscriptions_on_guid", using: :btree
 
   create_table "products", force: :cascade do |t|
-    t.string   "product_name"
+    t.string   "name"
     t.text     "description"
     t.decimal  "price"
     t.string   "picture"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

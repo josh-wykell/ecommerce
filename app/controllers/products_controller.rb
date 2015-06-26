@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy,]
 
   def index
     @products = Product.all
@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = Product.create(product_params)
 
     respond_to do |format|
       if @product.save
@@ -52,6 +52,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:product_name, :description, :price, :image_url)
+    params.require(:product).permit(:name, :description, :price, :picture)
   end
 end
