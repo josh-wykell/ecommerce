@@ -3,10 +3,7 @@ class ShoppingCart < ActiveRecord::Base
   
   has_many :cart_items
 
-  before_validation on: :create do
-    self.permalink = SecureRandom.hex
-    self.name = "Cart on Buy it!"
-  end
+  
 
 
   def price

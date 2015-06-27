@@ -1,17 +1,7 @@
 class Product < ActiveRecord::Base
   include Payola::Sellable
-
+  has_many :cart_items
   mount_uploader :picture, PictureUploader
-
-  include PgSearch
-  pg_search_scope :search_products,
-                  against: :name,
-                  :using => {
-                    :tsearch => {:dictionary => "english",
-                                 :prefix => true
-                    }
-                  }
- 
 
 
   def price_in_dollars

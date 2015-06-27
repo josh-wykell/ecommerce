@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-generators', '~> 3.3.4'
 gem 'rails_admin'
-gem 'acts_as_shopping_cart', '~> 0.2.1'
+#gem 'acts_as_shopping_cart', '~> 0.2.1'
 
 gem 'bootstrap-sass'
 gem 'devise'
@@ -19,7 +19,7 @@ gem 'puma'
 gem 'simple_form'
 gem 'slim-rails'
 gem 'upmin-admin'
-gem 'pg_search'
+#gem 'pg_search'
 
 
 gem 'carrierwave'
