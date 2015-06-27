@@ -1,0 +1,4 @@
+<%= form_tag('cart-item', remote: true, class: "form-inline", id: "quantity-form") do %>
+  <%= hidden_field_tag :cart_item_id, @cart_item.id %>
+  <%= text_field_tag :quantity, nil, class: "form-control" %>
+<% end %>

@@ -1,0 +1,10 @@
+
+<% if @cart_item.quantity > 0 %>
+  $("#quantity-form").parent()
+    .html("<%= @cart_item.quantity %> | <%= j render 'link' %>")
+  $(".item-price[data-cart-item='" + <%= @cart_item.id %> + "']")
+    .html("<%= number_to_currency @cart_item.price_in_dollars %>")
+<% else %>
+  $("[data-cart-item='" + <%= @cart_item.id %> + "']").parent().remove()
+<% end %>
+$("#total-price").html("<%= number_to_currency @cart_item.shopping_cart.price_in_dollars %>")

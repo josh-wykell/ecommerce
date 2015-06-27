@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find params[:id]
   end
 
   def new
@@ -38,6 +39,8 @@ class ProductsController < ApplicationController
       redirect_to products_url, notice: 'Product was successfully destroyed.' 
   end
 
+ 
+
   private
   
   def set_product
@@ -45,6 +48,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :picture)
+    params.require(:product).permit(:name, :description, :price, :picture, :permalink)
   end
 end

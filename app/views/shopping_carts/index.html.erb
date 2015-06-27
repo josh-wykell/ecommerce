@@ -1,0 +1,30 @@
+<div>
+  <h1>Your cart</h1>
+  <p><%= link_to "Return home", root_path %>
+</div>
+
+<table class="table">
+  <tr>
+    <th>Item</th>
+    <th>Quantity</th>
+    <th>Price</th>
+  </tr>
+  <% @shopping_cart.cart_items.each do |item| %>
+    <tr>
+      <td><%= item.product.name %></td>
+      <td class="item-quantity" data-cart-item="<%= item.id %>"><%= item.quantity %> |
+      <%= link_to "Edit", edit_cart_item_path(cart_item_id: item.id),
+      remote: true %></td>
+      <td class="item-price" data-cart-item="<%= item.id %>">
+        <%= number_to_currency(item.price_in_dollars) %>
+      </td>
+    </tr>
+  <% end %>
+  <tr></tr>
+  <tr>
+    <td></td>
+    <td><b>Total: </b></td>
+    <td id="total-price"><%= number_to_currency @shopping_cart.price_in_dollars %></td>
+</table>
+
+<%= render 'payola/transactions/checkout', sellable: @shopping_cart %>

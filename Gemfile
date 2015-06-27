@@ -19,6 +19,7 @@ gem 'puma'
 gem 'simple_form'
 gem 'slim-rails'
 gem 'upmin-admin'
+gem 'pg_search'
 
 
 gem 'carrierwave'
