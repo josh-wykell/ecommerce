@@ -3,10 +3,18 @@ Rails.application.routes.draw do
   mount Payola::Engine => '/payola', as: :payola
   devise_for :users
   resources :products
-  get 'shopping_cart', to: 'shopping_carts#index', as: :shopping_cart
-  post 'shopping_cart', to: 'shopping_carts#add'
-  patch 'shopping_cart', to: 'shopping_carts#update'
-  get 'shopping_cart/delete', to: 'shopping_carts#clear', as: :shopping_cart_delete
+  get 'cart', to: 'carts#index', as: :shopping_cart
+  post 'cart', to: 'carts#add'
+  patch 'cart', to: 'carts#update'
+  get 'cart/delete', to: 'carts#clear', as: :shopping_cart_delete
+
+  get 'cart-item', to: 'cart_item#edit', as: :edit_cart_item
+  post 'cart-item', to: 'cart_item#update', as: :cart_item
+
+  # get 'products/autocomplete'
+  # get 'products/:id', to: 'products#show', as: :product
+  post 'charges' => 'charges#create', as: :charges
+
   resources :charges, :only => [:new, :create]
 
   root 'products#index'

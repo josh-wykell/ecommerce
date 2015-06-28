@@ -1,10 +1,12 @@
-class ShoppingCart < ActiveRecord::Base
+class Cart < ActiveRecord::Base
   include Payola::Sellable
   
   has_many :cart_items
 
-  
-
+  before_validation on: :create do
+    self.permalink = SecureRandom.hex
+    self.name = "Your Cart"
+  end
 
   def price
     cart_items.map { |item| item.price }.sum
@@ -15,6 +17,7 @@ class ShoppingCart < ActiveRecord::Base
   end
 
   def redirect_path(sale)
-    '/shoppint_cart/delete'
+    '/cart/delete'
   end
 end
+

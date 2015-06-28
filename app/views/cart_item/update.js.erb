@@ -7,4 +7,4 @@
 <% else %>
   $("[data-cart-item='" + <%= @cart_item.id %> + "']").parent().remove()
 <% end %>
-$("#total-price").html("<%= number_to_currency @cart_item.shopping_cart.price_in_dollars %>")
+$("#total-price").html("<%= number_to_currency @cart_item.cart.price_in_dollars %>")

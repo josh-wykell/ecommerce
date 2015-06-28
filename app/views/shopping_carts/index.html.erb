@@ -9,7 +9,7 @@
     <th>Quantity</th>
     <th>Price</th>
   </tr>
-  <% @shopping_cart.cart_items.each do |item| %>
+  <% @cart.cart_items.each do |item| %>
     <tr>
       <td><%= item.product.name %></td>
       <td class="item-quantity" data-cart-item="<%= item.id %>"><%= item.quantity %> |
@@ -24,7 +24,7 @@
   <tr>
     <td></td>
     <td><b>Total: </b></td>
-    <td id="total-price"><%= number_to_currency @shopping_cart.price_in_dollars %></td>
+    <td id="total-price"><%= number_to_currency @cart.price_in_dollars %></td>
 </table>
 
-<%= render 'payola/transactions/checkout', sellable: @shopping_cart %>
+<%= render 'payola/transactions/checkout', sellable: @cart %>

@@ -20,7 +20,7 @@
         <td><%= product.description %></td>
         <td><%= product.price %></td>
         <td><%= image_tag(product.picture.thumb) %></td>
-        <td><%= link_to "Add to cart", shopping_cart_path(product_id: product.id),
+        <td><%= link_to "Add to cart", cart_path(product_id: product.id),
             method: :post, remote: true, class: "btn btn-primary buy-now",
             data: { product_id: product.id } %></td>
         <td><%= link_to 'Show', product %></td>

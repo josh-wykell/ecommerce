@@ -5,4 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Product.create(product_name:'Thing', description:'This is a thing. Its a really good one.', price:4.99)
+Product.create(name:'Thing', description:'This is a thing. Its a really good one.', price:499, permalink:'thing')
