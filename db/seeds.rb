@@ -14,5 +14,5 @@ require 'faker'
                   description: Faker::Hacker.say_something_smart,
                   price: (Faker::Commerce.price.to_f * 100).to_i,
                   permalink: Faker::Lorem.words,
-                  picture: "http://loremflickr.com/640/480/#{product_name.split.last.downcase}") # Find somewhat relevant images, lol.
+                  remote_picture_url: "http://loremflickr.com/640/480/#{product_name.split.last.downcase}") # Find somewhat relevant images, lol.
 end
