@@ -8,6 +8,10 @@ class ProductsController < ApplicationController
   def show
   end
 
+  def cost
+    @product.price / 100.0
+  end
+
   def new
     @product = Product.new
   end

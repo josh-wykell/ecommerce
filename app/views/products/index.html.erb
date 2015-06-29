@@ -18,7 +18,7 @@
       <tr>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
-        <td><%= product.price %></td>
+        <td><%= format_money(product.price) %></td>
         <td><%= image_tag(product.picture.thumb) %></td>
         <td><%= render 'payola/transactions/checkout', sellable: product %></td>
         <td><%= link_to 'Show', product %></td>
