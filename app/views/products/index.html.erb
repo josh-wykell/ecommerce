@@ -1,32 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Product name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Image url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= format_money(product.price) %></td>
-        <td><%= image_tag(product.picture.thumb) %></td>
-        <td><%= render 'payola/transactions/checkout', sellable: product %></td>
-        <td><%= link_to 'Show', product %></td>
-      </tr>
+<h1>Nick Nacks!</h1>
+<% @products.in_groups_of(2) do |products| %>
+  <div class="row">
+    <% products.each do |product| %>
+      <div class="col-lg-6">
+        <div class="well">
+          <h4><%= link_to "#{product.name}", product %></h4>
+          <%= link_to image_tag("#{product.picture.thumb}"), product %>
+          <p><%= product.description %></p>
+          <%= format_money(product.price) %>
+          <%= render 'payola/transactions/checkout', sellable: product %>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
+  </div>
+<% end %>
 <br>
 
 

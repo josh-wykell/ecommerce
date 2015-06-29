@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+body {
+  font-family: 'Open Sans Condensed', sans-serif;
+  background-color: #DBC689;
+}
+
+#customize_nav {
+  background-color: #E8B985 ;
+} 
+
+#loggin {
+  margin-top: 3px;
+}
