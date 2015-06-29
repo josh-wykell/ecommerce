@@ -148,10 +148,10 @@ ActiveRecord::Schema.define(version: 20150627194644) do
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "price"
+    t.integer  "price_in_cents"
     t.string   "picture"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "permalink"
   end
 
